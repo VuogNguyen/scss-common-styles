@@ -1,0 +1,99 @@
+$breakpoints: (
+  "mobile"     : $screen-xs-min,
+  "tablet"     : $screen-sm-min,
+  "desktop"    : $screen-md-min,
+  "widescreen" : $screen-lg-min
+);
+
+
+$default-breakpoint: root;
+$current-breakpoint: $default-breakpoint;
+$placeholders: ();
+
+@mixin breakpoint($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+  @if $value != null {                                    // 1
+    $current-breakpoint: $breakpoint         !global;     // 2
+    @media (min-width: $value) { @content; }              // 3
+    $current-breakpoint: $default-breakpoint !global;     // 5
+  }
+  @else {                                  
+    @warn "Invalid breakpoint `#{$breakpoint}`.";         // 6
+  }
+}
+
+
+@mixin placeholder($name) {
+  @if not index($placeholders, $name) {                  // 1
+    $placeholders: append($placeholders, $name) !global; // 2
+    @at-root {
+      @each $breakpoint, $value in $breakpoints {        // 3
+        @media (min-width: $value) {                     // 4
+          %#{$name}-#{$breakpoint} {                     // 5
+            @content;                                    // 6
+          }
+        }
+      }
+      %#{$name}-#{$default-breakpoint} {                 // 7
+        @content;
+      }
+    }
+  }
+  @else {
+    @warn "Placeholder `#{$name}` already exists.";      // 8
+  }
+}
+
+@mixin _($name) {
+  @extend %#{$name}-#{$current-breakpoint} !optional;
+}
+
+@mixin transition($args) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	transition: $args;
+}
+
+@mixin transform($args) {
+	-webkit-transform: $args;
+	-moz-transform: $args;
+	-ms-transform: $args;
+	transform: $args;
+}
+
+@mixin box-shadow($args) {
+	-webkit-box-shadow: $args;
+	-moz-box-shadow: $args;
+	box-shadow: $args;
+}
+
+@mixin background-gradient($deg, $arg1, $args2) {
+	background: -webkit-linear-gradient($deg, $arg1, $args2); /* Chrome 10+, Saf5.1+ */
+	background:    -moz-linear-gradient($deg, $arg1, $args2); /* FF3.6+ */
+	background:     -ms-linear-gradient($deg, $arg1, $args2); /* IE10 */
+	background:      -o-linear-gradient($deg, $arg1, $args2); /* Opera 11.10+ */
+	background:         linear-gradient($deg, $arg1, $args2); /* W3C */
+}
+
+@mixin hover-with-underline($color, $padding-bottom:3px, $border-width:2px) {
+	border-color: transparent !important;
+	border-radius: 0 !important;
+	border-width: 0 !important;
+	padding-bottom: $padding-bottom !important;
+	border-bottom-width: $border-width !important;
+	border-bottom-style: solid;
+	&:hover {
+		border-bottom-color: $color !important;
+	}
+}
+
+@mixin active-with-underline($color, $padding-bottom, $border-width:2px) {
+	border-color: transparent !important;
+	border-radius: 0 !important;
+	border-width: 0 !important;
+	padding-bottom: $padding-bottom !important;
+	border-bottom-width: $border-width !important;
+	border-bottom-style: solid;
+	border-bottom-color: $color !important;
+}
