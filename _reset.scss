@@ -1,0 +1,12 @@
+button, a {
+	&:active, &:focus, &:hover {
+		text-decoration: initial !important;
+		box-shadow: none !important;
+		outline: 0 !important;
+	}
+}
+
+ul, ol {
+	list-style: none;
+	padding: 0;
+}

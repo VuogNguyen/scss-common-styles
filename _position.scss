@@ -1,0 +1,30 @@
+.pos-a {
+	position: absolute;
+}
+
+.pos-r {
+	position: relative;
+}
+
+.pos-f {
+	position: fixed;
+}
+
+.pos-s {
+	position: static;
+}
+
+.center-block {
+	@extend .pos-r;
+	float: none !important;
+	display: block;
+	margin: 0 auto;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.block {
+	display: block;
+}

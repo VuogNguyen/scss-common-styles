@@ -88,7 +88,7 @@ $placeholders: ();
 	}
 }
 
-@mixin active-with-underline($color, $padding-bottom, $border-width:2px) {
+@mixin active-with-underline($color, $padding-bottom:3px, $border-width:2px) {
 	border-color: transparent !important;
 	border-radius: 0 !important;
 	border-width: 0 !important;
