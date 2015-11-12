@@ -1,9 +1,9 @@
 $breakpoints: (
-  "mobile"     : $screen-xs-min,
-  "tablet"     : $screen-sm-min,
-  "desktop"    : $screen-md-min,
-  "widescreen" : $screen-lg-min
-);
+	"mobile"     : $screen-xs-min,
+	"tablet"     : $screen-sm-min,
+	"desktop"    : $screen-md-min,
+	"widescreen" : $screen-lg-min
+	);
 
 
 $default-breakpoint: root;
@@ -11,7 +11,7 @@ $current-breakpoint: $default-breakpoint;
 $placeholders: ();
 
 @mixin breakpoint($breakpoint) {
-  $value: map-get($breakpoints, $breakpoint);
+	$value: map-get($breakpoints, $breakpoint);
   @if $value != null {                                    // 1
     $current-breakpoint: $breakpoint         !global;     // 2
     @media (min-width: $value) { @content; }              // 3
@@ -35,7 +35,7 @@ $placeholders: ();
         }
       }
       %#{$name}-#{$default-breakpoint} {                 // 7
-        @content;
+      	@content;
       }
     }
   }
@@ -45,7 +45,7 @@ $placeholders: ();
 }
 
 @mixin _($name) {
-  @extend %#{$name}-#{$current-breakpoint} !optional;
+	@extend %#{$name}-#{$current-breakpoint} !optional;
 }
 
 @mixin transition($args) {

@@ -1,12 +1,12 @@
 @include placeholder('center-vertical-pos-a') {
-  position: absolute;
-  top: 50%;
-  @include transform(translateY(-50%));
+	position: absolute;
+	top: 50%;
+	@include transform(translateY(-50%));
 }
 
 @include placeholder('center-element-pos-a') {
-  position: absolute;
-  top: 50%;
+	position: absolute;
+	top: 50%;
 	left: 50%;
-  @include transform(translate(-50%,-50%));
+	@include transform(translate(-50%,-50%));
 }
