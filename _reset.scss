@@ -1,12 +1,21 @@
 button, a {
 	&:active, &:focus, &:hover {
-		text-decoration: initial !important;
+		text-decoration: none !important;
 		box-shadow: none !important;
 		outline: 0 !important;
 	}
+	text-decoration: none !important;
+	box-shadow: none !important;
+	outline: 0 !important;
 }
 
 ul, ol {
 	list-style: none;
 	padding: 0;
+}
+
+input, textarea {
+	&:focus {
+		outline: none !important;
+	}
 }
