@@ -1,0 +1,21 @@
+.nv-arrow {
+	margin: 0 auto;
+	width: 20px;
+	height: 20px;
+	border-top: 1px solid #A3A3A3;
+	border-right: 1px solid #A3A3A3;
+	cursor: pointer;
+	@include transition(0.75s all);
+	&.arrow-down {
+		@include transform(rotate(135deg) translateX(-50%));
+	}
+	&.arrow-up {
+		@include transform(rotate(-45deg) translateX(-50%));
+	}
+	&.arrow-left {
+		@include transform(rotate(45deg) translateX(-50%) scale(-1));
+	}
+	&.arrow-right {
+		@include transform(rotate(45deg) translateX(-50%));
+	}
+}

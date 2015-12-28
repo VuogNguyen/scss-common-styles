@@ -1,0 +1,41 @@
+.bouncing {
+	animation-name: floating;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-direction: initial;
+	animation-fill-mode: initial;
+	animation-play-state: initial;
+
+	-webkit-animation-name: floating;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-direction: initial;
+	-webkit-animation-fill-mode: initial;
+	-webkit-animation-play-state: initial;
+}
+
+@keyframes floating {
+	0% {
+		transform: translateY(-20%);
+	}
+	50% {
+		transform: translateY(5%);
+	}
+	100% {
+		transform: translateY(-20%);
+	}
+}
+
+@-webkit-keyframes floating {
+	0% {
+		-webkit-transform: translateY(-20%);
+	}
+	50% {
+		-webkit-transform: translateY(5%);
+	}
+	100% {
+		-webkit-transform: translateY(-20%);
+	}
+}
