@@ -1,85 +1,100 @@
 .s-11 {
-  width: calc(100% - 10px);
+  width: 100%;
 }
 .s-12 {
-  width: calc(50% - 10px);
+  width: 50%;
 }
 .s-13 {
-  width: calc(33.333333333% - 10px);
+  width: 33.3333333%;
 }
 .s-14 {
-  width: calc(25% - 10px);
+  width: 25%;
 }
 .s-15 {
-  width: calc(20% - 10px);
+  width: 20%;
 }
 
 
 @media only screen and (min-width: $screen-sm-min) {
   .sm-11 {
-    width: calc(100% - 10px);
+    width: 100%;
   }
   .sm-12 {
-    width: calc(50% - 10px);
+    width: 50%;
   }
   .sm-13 {
-    width: calc(33.333333333% - 10px);
+    width: 33.3333333%;
   }
   .sm-14 {
-    width: calc(25% - 10px);
+    width: 25%;
   }
   .sm-15 {
-    width: calc(20% - 10px);
+    width: 20%;
   }
 }
+
 @media only screen and (min-width: $screen-m-min) {
   .m-11 {
-    width: calc(100% - 10px);
+    width: 100%;
   }
   .m-12 {
-    width: calc(50% - 10px);
+    width: 50%;
   }
   .m-13 {
-    width: calc(33.333333333% - 10px);
+    width: 33.3333333%;
   }
   .m-14 {
-    width: calc(25% - 10px);
+    width: 25%;
   }
   .m-15 {
-    width: calc(20% - 10px);
+    width: 20%;
   }
 }
+
 @media only screen and (min-width: $screen-l-min){
   .l-11 {
-    width: calc(100% - 10px);
+    width: 100%;
   }
   .l-12 {
-    width: calc(50% - 10px);
+    width: 50%;
   }
   .l-13 {
-    width: calc(33.333333333% - 10px);
+    width: 33.3333333%;
   }
   .l-14 {
-    width: calc(25% - 10px);
+    width: 25%;
   }
   .l-15 {
-    width: calc(20% - 10px);
+    width: 20%;
   }
 }
 @media only screen and (min-width: $screen-lg-min){
   .lg-11 {
-    width: calc(100% - 10px);
+    width: 100%;
   }
   .lg-12 {
-    width: calc(50% - 10px);
+    width: 50%;
   }
   .lg-13 {
-    width: calc(33.333333333% - 10px);
+    width: 33.3333333%;
   }
   .lg-14 {
-    width: calc(25% - 10px);
+    width: 25%;
   }
   .lg-15 {
-    width: calc(20% - 10px);
+    width: 20%;
   }
+}
+
+.grid-col {
+  float: left;
+  position: relative;
+}
+
+// Adding padding around item children
+@mixin has-gutter($border-width, $color, $minus-width, $minus-height) {
+  width: calc(100% - #{$minus-width}*2);
+  height: calc(100% - #{$minus-height}*2);
+  border: $border-width solid $color;
+  display: block;
 }

@@ -1,18 +1,18 @@
-@include placeholder('center-vertical-pos-a') {
+@mixin center-element-absolute {
 	position: absolute;
 	top: 50%;
-	@include transform(translateY(-50%));
+	left: 50%;
+	@include transform(translate(-50%,-50%));
 }
 
-@include placeholder('center-horizontal-pos-a') {
+@mixin center-element-absolute-horizontal {
 	position: absolute;
 	left: 50%;
 	@include transform(translateX(-50%));
 }
 
-@include placeholder('center-element-pos-a') {
+@mixin center-element-absolute-vertical {
 	position: absolute;
 	top: 50%;
-	left: 50%;
-	@include transform(translate(-50%,-50%));
+	@include transform(translateY(-50%));
 }
