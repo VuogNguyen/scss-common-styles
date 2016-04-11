@@ -1,0 +1,11 @@
+{
+  "name": "Homepage",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-sass": "~2.1.0",
+    "gulp-autoprefixer": "~3.1.0",
+    "gulp-minify-css": "~1.2.2",
+    "gulp-rename": "~1.2.2"
+  }
+}
