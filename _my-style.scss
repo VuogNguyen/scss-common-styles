@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+}
+
+p {
+  margin: 5px 0;
+}
+
+section {
+  padding: 10px;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container {
+  width: 100vw;
+  background: gainsboro;
+  text-align: center;
+}
+
+.bg-red {
+  background: red;
+}
+
+.bg-blue {
+  background: blue;
+}
+
+.bg-green {
+  background: green;
+}
+
+.item {
+  height: 50px;
+  .item-child {
+    // Adding padding and border
+    @include has-gutter(1px, white, 10px, 10px);
+    // Centering vertical and horizontal element
+    @include center-element-absolute;
+    border-radius: 5px;
+    background: violet;
+  }
+}
+
+h1.grid-heading {
+  margin: 0px 0 20px;
+  padding-top: 10px;
+}
+
+h1.underline {
+  // Color, Padding Bottom, Border-bottom-width
+  @include underline-on-hover(red, 1px, 1px);
+  @include transition(all 0.5s);
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.wrapper {
+  width: 100%;
+  height: 300px;
+  display: block;
+  position: relative;
+  background: yellow;
+  .children {
+    width: 200px;
+    height: 150px;
+    background: red;
+    @include center-element-absolute-vertical;
+    &.horizontally {
+      @include center-element-absolute-horizontal;
+    }
+    &.center {
+      @include center-element-absolute;
+    }
+  }
+}

@@ -84,6 +84,7 @@ $placeholders: ();
 	padding-bottom: $padding-bottom !important;
 	border-bottom-width: $border-width !important;
 	border-bottom-style: solid;
+  cursor: pointer;
 	&:hover {
 		border-bottom-color: $color !important;
 	}
